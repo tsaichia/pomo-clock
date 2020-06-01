@@ -51,6 +51,7 @@ export default {
   methods: {
     addTodo () {
       this.$store.commit('addTodo', this.newtodo)
+      this.newtodo = ''
     },
     delTodo (index) {
       this.$store.commit('delTodo', index)
