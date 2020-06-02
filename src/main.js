@@ -19,7 +19,7 @@ import './style/style.styl'
 import VueGtag from 'vue-gtag'
 
 Vue.use(VueGtag, {
-  config: { id: 'UA-1234567-1' }
+  config: { id: 'UA-168207856-1' }
 })
 
 new Vue({
