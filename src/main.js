@@ -22,10 +22,6 @@ Vue.use(VueGtag, {
   config: { id: 'UA-168207856-1' }
 })
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
-
 library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
