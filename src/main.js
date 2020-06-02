@@ -16,11 +16,15 @@ import draggable from 'vuedraggable'
 import 'noto-sans-tc/noto_sans_tc_regular/css.css'
 import './style/style.styl'
 
-import VueAnalytics from 'vue-analytics'
+import VueGtag from 'vue-gtag'
 
-Vue.use(VueAnalytics, {
-  id: 'UA-168207856-1'
+Vue.use(VueGtag, {
+  config: { id: 'UA-1234567-1' }
 })
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app')
 
 library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
