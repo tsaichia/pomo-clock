@@ -16,6 +16,12 @@ import draggable from 'vuedraggable'
 import 'noto-sans-tc/noto_sans_tc_regular/css.css'
 import './style/style.styl'
 
+import VueAnalytics from 'vue-analytics'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-168207856-1'
+})
+
 library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

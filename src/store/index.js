@@ -58,7 +58,7 @@ export default new Vuex.Store({
     },
     start (state) {
       if (state.isBreak) {
-        state.current = '休息一下'
+        state.current = '休息一下吧!朋友(ㆁᴗㆁ✿)'
       } else if (!state.isBreak) {
         state.current = state.todos[0].name
         state.todos.splice(0, 1)

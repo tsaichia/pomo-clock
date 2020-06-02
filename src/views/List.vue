@@ -5,8 +5,8 @@
     <b-table-simple>
       <b-thead>
         <b-tr>
-          <b-th>事項</b-th>
-          <b-th>動作</b-th>
+          <b-th>今天要做什麼呢?ヾ(・ω・ｏ)</b-th>
+          <b-th>編輯/刪除</b-th>
         </b-tr>
       </b-thead>
       <draggable v-model="todos" tag="tbody" v-bind="dragOption">

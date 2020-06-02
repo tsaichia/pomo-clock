@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     currentText () {
-      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '點擊開始' : '沒有事項'
+      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '開始囉٩(๑´0`๑)۶' : '增加工作清單吧٩(ˊᗜˋ*)و'
     },
     timetext () {
       const m = Math.floor(this.timeleft / 60)
@@ -86,7 +86,7 @@ export default {
       if (this.todos.length > 0) {
         this.start()
       } else {
-        alert('結束')
+        alert('ʕっ•ᴥ•ʔっ完成了所有事項!!⊂(･ω･*⊂)')
       }
     },
     pause () {
