@@ -6,10 +6,11 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import RadialProgressBar from 'vue-radial-progress'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faPlayCircle, faBriefcase, faClipboardList, faCog } from '@fortawesome/free-solid-svg-icons'
 
 import draggable from 'vuedraggable'
 
@@ -22,10 +23,11 @@ Vue.use(VueGtag, {
   config: { id: 'UA-168207856-1' }
 })
 
-library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward)
+library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faPlayCircle, faBriefcase, faClipboardList, faCog)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('draggable', draggable)
+Vue.component('RadialProgressBar', RadialProgressBar)
 
 Vue.config.productionTip = false
 

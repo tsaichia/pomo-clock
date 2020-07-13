@@ -1,17 +1,24 @@
 <template>
+
   <div id="home">
-    <h1>{{ currentText }}</h1>
+    <div class="mt-4" id="text">
+    <h3>{{ currentText }}</h3>
+  </div>
+  <radial-progress-bar class="m-auto" :strokeWidth='9' :diameter="275" :completed-steps="timeleft" :total-steps="totalSteps" :startColor="startColor" :stopColor="stopColor" :innerStrokeColor="innerStrokeColor">
     <h2>{{ timetext }}</h2>
-    <b-btn variant="primary" v-if="status != 1" @click="start">
-      <font-awesome-icon :icon="['fas', 'play']"></font-awesome-icon>
+  </radial-progress-bar>
+
+    <b-btn variant="white" v-if="status != 1" @click="start">
+      <font-awesome-icon class="mt-2" id="play" size="2x" :icon="['fas', 'play']" color="white" ></font-awesome-icon>
     </b-btn>
-    <b-btn variant="primary" v-if="status == 1" @click="pause">
-      <font-awesome-icon :icon="['fas', 'pause']"></font-awesome-icon>
+    <b-btn variant="white" v-if="status == 1" @click="pause">
+      <font-awesome-icon class="mt-4" id="pause" size="2x" :icon="['fas', 'pause']" color="white"></font-awesome-icon>
     </b-btn>
-    <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
-      <font-awesome-icon :icon="['fas', 'step-forward']"></font-awesome-icon>
+    <b-btn variant="white" v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
+      <font-awesome-icon class="mt-2" id="forward" size="2x" :icon="['fas', 'step-forward']" color="white"></font-awesome-icon>
     </b-btn>
   </div>
+
 </template>
 
 <script>
@@ -22,7 +29,11 @@ export default {
       // 1 = 播放
       // 2 = 暫停
       status: 0,
-      timer: 0
+      timer: 0,
+      totalSteps: 5,
+      startColor: '#ffffff77',
+      stopColor: '#ffffff77',
+      innerStrokeColor: '#ffffff00'
     }
   },
   computed: {
@@ -54,7 +65,7 @@ export default {
         this.status = 1
         this.timer = setInterval(() => {
           this.$store.commit('countdown')
-          if (this.timeleft <= 0) {
+          if (this.timeleft < 0) {
             this.finish(false)
           }
         }, 1000)
@@ -65,7 +76,7 @@ export default {
           this.status = 1
           this.timer = setInterval(() => {
             this.$store.commit('countdown')
-            if (this.timeleft <= 0) {
+            if (this.timeleft < 0) {
               this.finish(false)
             }
           }, 1000)

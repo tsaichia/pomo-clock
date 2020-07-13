@@ -1,8 +1,8 @@
 <template>
   <div id="list">
     <b-form-input v-model="newtodo"></b-form-input>
-    <b-btn variant="success" @click="addTodo">新增</b-btn>
-    <b-table-simple>
+    <b-btn class="mt-2 mb-2" variant="light" @click="addTodo">新增</b-btn>
+    <b-table-simple id="listtext">
       <b-thead>
         <b-tr>
           <b-th>今天要做什麼呢?ヾ(・ω・ｏ)</b-th>
@@ -17,19 +17,19 @@
           <b-td>
             <b-form-input v-model="todo.model" v-if="todo.edit"></b-form-input>
             <b-btn variant="link" class="text-danger" v-if="todo.edit" @click="cancelTodo(index)">
-              <font-awesome-icon :icon="['fas', 'undo']"></font-awesome-icon>
+              <font-awesome-icon color="white" :icon="['fas', 'undo']"></font-awesome-icon>
             </b-btn>
             <b-btn variant="link" class="text-success" v-if="todo.edit" @click="saveTodo(index)">
-              <font-awesome-icon :icon="['fas', 'save']"></font-awesome-icon>
+              <font-awesome-icon color="white" :icon="['fas', 'save']"></font-awesome-icon>
             </b-btn>
             <span v-else>{{ todo.name }}</span>
           </b-td>
           <b-td>
             <b-btn variant="link" class="text-primary" @click="editTodo(index)">
-              <font-awesome-icon :icon="['fas', 'pen']"></font-awesome-icon>
+              <font-awesome-icon color="white" :icon="['fas', 'pen']"></font-awesome-icon>
             </b-btn>
             <b-btn variant="link" class="text-danger" @click="delTodo(index)">
-              <font-awesome-icon :icon="['fas', 'times']"></font-awesome-icon>
+              <font-awesome-icon color="white" :icon="['fas', 'times']"></font-awesome-icon>
             </b-btn>
           </b-td>
         </b-tr>
