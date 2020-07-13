@@ -1,6 +1,6 @@
 <template>
   <div id="settings">
-    <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
+    <b-table id="settext" :items="items" :fields="fields" @row-clicked="selectAlarm">
       <template v-slot:cell(preview)="data">
         <audio controls :src="'./alarms/'+data.item.file"></audio>
       </template>

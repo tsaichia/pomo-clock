@@ -15,23 +15,6 @@ export default new Vuex.Store({
     current: '',
     isBreak: false
   },
-  getters: {
-    alarm (state) {
-      return state.alarm
-    },
-    todos (state) {
-      return state.todos
-    },
-    timeleft (state) {
-      return state.timeleft
-    },
-    current (state) {
-      return state.current
-    },
-    isBreak (state) {
-      return state.isBreak
-    }
-  },
   mutations: {
     selectAlarm (state, data) {
       state.alarm = data
@@ -58,7 +41,7 @@ export default new Vuex.Store({
     },
     start (state) {
       if (state.isBreak) {
-        state.current = '休息一下吧!朋友(ㆁᴗㆁ✿)'
+        state.current = '休息一下吧!(ㆁᴗㆁ✿)'
       } else if (!state.isBreak) {
         state.current = state.todos[0].name
         state.todos.splice(0, 1)
@@ -68,16 +51,27 @@ export default new Vuex.Store({
       state.timeleft--
     },
     finish (state) {
-      if (state.todos.length > 0) {
-        state.isBreak = !state.isBreak
-      }
+      if (state.todos.length > 0) state.isBreak = !state.isBreak
       state.current = ''
       state.timeleft = state.isBreak ? timeleftBreak : timeleft
     }
   },
-  actions: {
-  },
-  modules: {
+  getters: {
+    alarm (state) {
+      return state.alarm
+    },
+    todos (state) {
+      return state.todos
+    },
+    timeleft (state) {
+      return state.timeleft
+    },
+    current (state) {
+      return state.current
+    },
+    isBreak (state) {
+      return state.isBreak
+    }
   },
   plugins: [createPersistedState()]
 })
